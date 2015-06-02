@@ -25,4 +25,4 @@ RUN chmod 750 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Default command
-CMD [ "/opt/sensu/bin/sensu-server", "-c", "/etc/sensu/config.json", "-d", "/etc/sensu/conf.d", "-e" "/etc/sensu/extensions", "-L", "info" ]
+CMD [ "/opt/sensu/bin/sensu-server", "-c", "/etc/sensu/config.json", "-d", "/etc/sensu/conf.d", "-e", "/etc/sensu/extensions", "-L", "info" ]
