@@ -10,9 +10,12 @@ MAINTAINER Nicolas Fraison <nfraison@yahoo.fr>
 ADD repo/sensu.repo /etc/yum.repos.d/sensu.repo
 
 # Deploy sensu
-RUN yum install sensu -y && \
+RUN yum install sensu gcc-c++ -y && \
     mv /etc/sensu/config.json.example /etc/sensu/config.json && \
     chown -R sensu:sensu /etc/sensu
+
+# Install mail handler gem
+RUN /opt/sensu/embedded/bin/gem install sensu-plugins-mailer
 
 # Mount sensu config.
 ADD conf/config.json /etc/sensu/config.json
