@@ -10,7 +10,7 @@ MAINTAINER Nicolas Fraison <nfraison@yahoo.fr>
 ADD repo/sensu.repo /etc/yum.repos.d/sensu.repo
 
 # Deploy sensu
-RUN yum install sensu gcc-c++ -y && \
+RUN yum install sensu gcc-c++ make -y && \
     mv /etc/sensu/config.json.example /etc/sensu/config.json && \
     chown -R sensu:sensu /etc/sensu
 
