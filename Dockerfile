@@ -6,11 +6,13 @@
 FROM ashangit/base:latest
 MAINTAINER Nicolas Fraison <nfraison@yahoo.fr>
 
+ENV SENSU_VERSION 0.19.2
+
 # Mount sensu repo.
 ADD repo/sensu.repo /etc/yum.repos.d/sensu.repo
 
 # Deploy sensu
-RUN yum install sensu gcc-c++ make -y && \
+RUN yum install sensu-${SENSU_VERSION} gcc-c++ make -y && \
     mv /etc/sensu/config.json.example /etc/sensu/config.json && \
     chown -R sensu:sensu /etc/sensu
 
