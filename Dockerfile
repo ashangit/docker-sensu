@@ -6,7 +6,7 @@
 FROM ashangit/base:latest
 MAINTAINER Nicolas Fraison <nfraison@yahoo.fr>
 
-ENV SENSU_VERSION 0.20.3
+ENV SENSU_VERSION 0.20.4
 
 # Mount sensu repo.
 ADD repo/sensu.repo /etc/yum.repos.d/sensu.repo
